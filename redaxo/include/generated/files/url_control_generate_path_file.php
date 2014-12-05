@@ -1,0 +1,1 @@
+{"rex_test":{"14":[{"1":"http:\/\/rexbase15\/14-0-Ausgabe-Beispiele-Details\/erster-eintrag.html","2":"http:\/\/rexbase15\/14-0-Ausgabe-Beispiele-Details\/zweiter-eintrag.html","3":"http:\/\/rexbase15\/14-0-Ausgabe-Beispiele-Details\/dritter-eintrag.html","4":"http:\/\/rexbase15\/14-0-Ausgabe-Beispiele-Details\/vierter-eintrag.html"}]}}

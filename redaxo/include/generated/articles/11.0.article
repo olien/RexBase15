@@ -1,0 +1,37 @@
+<?php
+$REX['ART'][11]['article_id'][0] = '11';
+$REX['ART'][11]['last_update_stamp'][0] = '1417776057';
+$REX['ART'][11]['pid'][0] = '11';
+$REX['ART'][11]['re_id'][0] = '0';
+$REX['ART'][11]['name'][0] = 'Footer 2';
+$REX['ART'][11]['catname'][0] = 'Footer 2';
+$REX['ART'][11]['catprior'][0] = '10';
+$REX['ART'][11]['attributes'][0] = '';
+$REX['ART'][11]['startpage'][0] = '1';
+$REX['ART'][11]['prior'][0] = '1';
+$REX['ART'][11]['path'][0] = '|';
+$REX['ART'][11]['status'][0] = '1';
+$REX['ART'][11]['createdate'][0] = '1417448063';
+$REX['ART'][11]['updatedate'][0] = '1417448067';
+$REX['ART'][11]['template_id'][0] = '1';
+$REX['ART'][11]['clang'][0] = '0';
+$REX['ART'][11]['createuser'][0] = 'olien';
+$REX['ART'][11]['updateuser'][0] = 'olien';
+$REX['ART'][11]['revision'][0] = '0';
+$REX['ART'][11]['yrewrite_url'][0] = '';
+$REX['ART'][11]['yrewrite_priority'][0] = '';
+$REX['ART'][11]['yrewrite_changefreq'][0] = '';
+$REX['ART'][11]['yrewrite_title'][0] = '';
+$REX['ART'][11]['yrewrite_description'][0] = '';
+$REX['ART'][11]['yrewrite_noindex'][0] = '0';
+$REX['ART'][11]['seo_title'][0] = '';
+$REX['ART'][11]['seo_description'][0] = '';
+$REX['ART'][11]['seo_keywords'][0] = '';
+$REX['ART'][11]['seo_custom_url'][0] = '';
+$REX['ART'][11]['seo_canonical_url'][0] = '';
+$REX['ART'][11]['seo_noindex'][0] = '';
+$REX['ART'][11]['seo_ignore_prefix'][0] = '';
+$REX['ART'][11]['cat_navigationstyp'][0] = '|footer|';
+$REX['ART'][11]['art_backlink'][0] = '';
+$REX['ART'][11]['art_fonticon'][0] = '';
+?>

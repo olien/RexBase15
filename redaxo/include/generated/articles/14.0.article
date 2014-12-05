@@ -1,0 +1,37 @@
+<?php
+$REX['ART'][14]['article_id'][0] = '14';
+$REX['ART'][14]['last_update_stamp'][0] = '1417776057';
+$REX['ART'][14]['pid'][0] = '14';
+$REX['ART'][14]['re_id'][0] = '0';
+$REX['ART'][14]['name'][0] = 'Ausgabe Beispiele Details';
+$REX['ART'][14]['catname'][0] = '';
+$REX['ART'][14]['catprior'][0] = '0';
+$REX['ART'][14]['attributes'][0] = '';
+$REX['ART'][14]['startpage'][0] = '0';
+$REX['ART'][14]['prior'][0] = '3';
+$REX['ART'][14]['path'][0] = '|';
+$REX['ART'][14]['status'][0] = '1';
+$REX['ART'][14]['createdate'][0] = '1417529294';
+$REX['ART'][14]['updatedate'][0] = '1417529325';
+$REX['ART'][14]['template_id'][0] = '1';
+$REX['ART'][14]['clang'][0] = '0';
+$REX['ART'][14]['createuser'][0] = 'olien';
+$REX['ART'][14]['updateuser'][0] = 'olien';
+$REX['ART'][14]['revision'][0] = '0';
+$REX['ART'][14]['yrewrite_url'][0] = '';
+$REX['ART'][14]['yrewrite_priority'][0] = '';
+$REX['ART'][14]['yrewrite_changefreq'][0] = '';
+$REX['ART'][14]['yrewrite_title'][0] = '';
+$REX['ART'][14]['yrewrite_description'][0] = '';
+$REX['ART'][14]['yrewrite_noindex'][0] = '0';
+$REX['ART'][14]['seo_title'][0] = '';
+$REX['ART'][14]['seo_description'][0] = '';
+$REX['ART'][14]['seo_keywords'][0] = '';
+$REX['ART'][14]['seo_custom_url'][0] = '';
+$REX['ART'][14]['seo_canonical_url'][0] = '';
+$REX['ART'][14]['seo_noindex'][0] = '';
+$REX['ART'][14]['seo_ignore_prefix'][0] = '';
+$REX['ART'][14]['cat_navigationstyp'][0] = 'main';
+$REX['ART'][14]['art_backlink'][0] = '';
+$REX['ART'][14]['art_fonticon'][0] = '';
+?>

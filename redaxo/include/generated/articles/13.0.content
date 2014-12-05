@@ -1,0 +1,88 @@
+?><?php if ($this->ctype == '1' || ($this->ctype == '-1')) { ?><?php
+
+/**
+ * XForm
+ * @author jan.kristinus[at]redaxo[dot]org Jan Kristinus
+ * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
+ */
+
+// module:xform_basic_out
+// v0.2.2
+//--------------------------------------------------------------------------------
+
+$xform = new rex_xform;
+if ("0" == 1) { $xform->setDebug(TRUE); }
+$form_data = 'url_var|vars|Hallo||<br />
+hidden|tid||REQUEST<br />
+';
+$form_data = trim(str_replace("<br />","",rex_xform::unhtmlentities($form_data)));
+$xform->setFormData($form_data);
+$xform->setRedaxoVars(13,0); 
+
+?><?php
+
+// action - showtext
+if("true" == "true")
+{
+  $html = "0"; // plaintext
+  if('2' == 1) $html = "1"; // html
+  if('2' == 2) $html = "2"; // textile
+  
+  $e3 = ''; $e4 = '';
+  if ($html == "0") {
+    $e3 = '<div class="rex-message"><div class="rex-info"><p>';
+    $e4 = '</p></div></div>';
+  }
+  
+  $t = str_replace("<br />","",rex_xform::unhtmlentities('Danke<br />
+<br />
+###vars###'));
+  $xform->setActionField("showtext",array(
+      $t,
+      $e3,
+      $e4,
+      $html // als HTML interpretieren
+    )
+  );
+}
+
+$form_type = "1";
+
+// action - email
+if ($form_type == "1" || $form_type == "2" || $form_type == "3")
+{
+  $mail_from = $REX['ERROR_EMAIL'];
+  if("kreischer@concedra.de" != "") $mail_from = "kreischer@concedra.de";
+  $mail_to = $REX['ERROR_EMAIL'];
+  if("kreischer@concedra.de" != "") $mail_to = "kreischer@concedra.de";
+  $mail_subject = "testmail";
+  $mail_body = str_replace("<br />","",rex_xform::unhtmlentities('###vars###'));
+  $xform->setActionField("email", array(
+      $mail_from,
+      $mail_to,
+      $mail_subject,
+      $mail_body
+    )
+  );
+}
+
+// action - db
+if ($form_type == "0" || $form_type == "2" || $form_type == "3")
+{
+  $xform->setObjectparams('main_table', '');
+  
+  //getdata
+  if ("" != "")
+    $xform->setObjectparams("getdata",TRUE);
+  
+  $xform->setActionField("db", array(
+      "", // table
+      $xform->objparams["main_where"], // where
+      )
+    );
+}
+
+echo $xform->getForm();
+
+?>
+<?php } ?>

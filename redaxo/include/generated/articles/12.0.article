@@ -1,0 +1,37 @@
+<?php
+$REX['ART'][12]['article_id'][0] = '12';
+$REX['ART'][12]['last_update_stamp'][0] = '1417776057';
+$REX['ART'][12]['pid'][0] = '12';
+$REX['ART'][12]['re_id'][0] = '0';
+$REX['ART'][12]['name'][0] = 'Main 2';
+$REX['ART'][12]['catname'][0] = 'Main 2';
+$REX['ART'][12]['catprior'][0] = '7';
+$REX['ART'][12]['attributes'][0] = '';
+$REX['ART'][12]['startpage'][0] = '1';
+$REX['ART'][12]['prior'][0] = '1';
+$REX['ART'][12]['path'][0] = '|';
+$REX['ART'][12]['status'][0] = '0';
+$REX['ART'][12]['createdate'][0] = '1417448248';
+$REX['ART'][12]['updatedate'][0] = '1417448088';
+$REX['ART'][12]['template_id'][0] = '1';
+$REX['ART'][12]['clang'][0] = '0';
+$REX['ART'][12]['createuser'][0] = 'olien';
+$REX['ART'][12]['updateuser'][0] = 'olien';
+$REX['ART'][12]['revision'][0] = '0';
+$REX['ART'][12]['yrewrite_url'][0] = '';
+$REX['ART'][12]['yrewrite_priority'][0] = '';
+$REX['ART'][12]['yrewrite_changefreq'][0] = '';
+$REX['ART'][12]['yrewrite_title'][0] = '';
+$REX['ART'][12]['yrewrite_description'][0] = '';
+$REX['ART'][12]['yrewrite_noindex'][0] = '0';
+$REX['ART'][12]['seo_title'][0] = '';
+$REX['ART'][12]['seo_description'][0] = '';
+$REX['ART'][12]['seo_keywords'][0] = '';
+$REX['ART'][12]['seo_custom_url'][0] = '';
+$REX['ART'][12]['seo_canonical_url'][0] = '';
+$REX['ART'][12]['seo_noindex'][0] = '';
+$REX['ART'][12]['seo_ignore_prefix'][0] = '';
+$REX['ART'][12]['cat_navigationstyp'][0] = '|main|';
+$REX['ART'][12]['art_backlink'][0] = '';
+$REX['ART'][12]['art_fonticon'][0] = '';
+?>

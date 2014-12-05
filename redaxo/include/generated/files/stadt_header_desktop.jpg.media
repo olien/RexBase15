@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['file_id'] = '12';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['filename'] = 'stadt_header_desktop.jpg';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['originalname'] = 'stadt.jpg';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['filesize'] = '320695';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['width'] = '1070';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['height'] = '450';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['title'] = 'Header Desktop';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['createdate'] = '1417700878';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['updatedate'] = '1417700878';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['stadt_header_desktop.jpg']['med_copyright'] = '';
+?>

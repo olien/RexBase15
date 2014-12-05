@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['file_id'] = '14';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['filename'] = 'stadt_header_mobile.jpg';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['originalname'] = 'stadt.jpg';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['filesize'] = '89176';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['width'] = '480';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['height'] = '250';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['title'] = 'Header Mobile';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['createdate'] = '1417700942';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['updatedate'] = '1417700942';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['stadt_header_mobile.jpg']['med_copyright'] = '';
+?>
