@@ -1,0 +1,3 @@
+[submodule "redaxo/include/addons/focuspoint"]
+	path = redaxo/include/addons/focuspoint
+	url = https://github.com/olien/rex_focuspoint.git
