@@ -39,14 +39,14 @@ $REX['ADDON']['status']['image_manager'] = '1';
 $REX['ADDON']['install']['import_export'] = '1';
 $REX['ADDON']['status']['import_export'] = '1';
 
-$REX['ADDON']['install']['install'] = '1';
-$REX['ADDON']['status']['install'] = '1';
+$REX['ADDON']['install']['install'] = '0';
+$REX['ADDON']['status']['install'] = '0';
 
 $REX['ADDON']['install']['installer'] = '1';
 $REX['ADDON']['status']['installer'] = '1';
 
-$REX['ADDON']['install']['ko_debug'] = '1';
-$REX['ADDON']['status']['ko_debug'] = '1';
+$REX['ADDON']['install']['ko_debug'] = '0';
+$REX['ADDON']['status']['ko_debug'] = '0';
 
 $REX['ADDON']['install']['media_edit'] = '1';
 $REX['ADDON']['status']['media_edit'] = '1';

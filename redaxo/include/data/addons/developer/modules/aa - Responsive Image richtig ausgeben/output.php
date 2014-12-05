@@ -1,11 +1,11 @@
-?><?php if ($this->ctype == '1' || ($this->ctype == '-1')) { ?>$image_widths['header_xs'] = 480;
+$image_widths['header_xs'] = 480;
 $image_widths['header_sm'] = 768;
 $image_widths['header_md'] = 992;
 $image_widths['header_lg'] = 1200;
 
 <?php
 
-$image = '1685_702.jpg';
+$image = 'REX_MEDIA[1]';
 
   $imagetype    = 'headerimage_desktop';
   $suffix       = '_header_md';
@@ -42,7 +42,7 @@ $image_widths['header_sm'] = 768;
 $image_widths['header_md'] = 992;
 $image_widths['header_lg'] = 1200;
 
-$image = '1685_702.jpg';
+$image = 'REX_MEDIA[1]';
 
 if ($image != '') {
 
@@ -75,4 +75,3 @@ if ($image != '') {
 }
 */
 ?>
-<?php } ?>

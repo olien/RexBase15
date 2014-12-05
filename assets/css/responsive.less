@@ -1,23 +1,27 @@
-// basecondition ~ less-framework ~ v3.2.2
-// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
-// licensed under MIT or GPLv3 ~ git.io/OJYZgw
-// http://pieroxy.net/blog/2012/10/18/media_features_of_the_most_common_devices.html
-
-// ----------------------------------------------------- ~ import
 @import "resources/_lib";
 
-// ----------------------------------------------------- ~ extra small devices (phones, up to 480px)
-@media (max-width: @screen-phone-max) {
-}
+/* Custom, iPhone Retina */
+  @media only screen and (min-width : 320px) {
+    body { background: #e5e5e5; }
+  }
 
-// ----------------------------------------------------- ~ small devices (tablets, 768px and up)
-@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
-}
+/* Extra Small Devices, Phones */
+  @media only screen and (min-width : 480px) {
+    body { background: #ffe5e5; }
+  }
 
-// ----------------------------------------------------- ~ medium devices (desktops, 992px and up)
-@media (min-width: @screen-md) and (max-width: @screen-md-max) {
-}
+/* Small Devices, Tablets */
+  @media only screen and (min-width : 768px) {
+    body { background: #e5ffe5; }
+  }
 
-// ----------------------------------------------------- ~ large devices (large desktops, 1200px and up)
-@media (min-width: @screen-lg) {
-}
+/* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    body { background: #e5e5ff; }
+  }
+
+/* Large Devices, Wide Screens */
+  @media only screen and (min-width : 1200px) {
+    body { background: #e5e5e5; }
+  }
+

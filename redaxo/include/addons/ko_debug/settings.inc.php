@@ -9,6 +9,6 @@
 // --- DYN
 $REX['ADDON']['settings']['ko_debug']['debug'] = "1";
 $REX['ADDON']['settings']['ko_debug']['krumo'] = "1";
-$REX['ADDON']['settings']['ko_debug']['ghost'] = "0";
+$REX['ADDON']['settings']['ko_debug']['ghost'] = "1";
 $REX['ADDON']['settings']['ko_debug']['kint'] = "1";
 // --- /DYN

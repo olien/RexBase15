@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['brot.jpg']['file_id'] = '8';
+$REX['MEDIA']['FILENAME']['brot.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['brot.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['brot.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['brot.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['brot.jpg']['filename'] = 'brot.jpg';
+$REX['MEDIA']['FILENAME']['brot.jpg']['originalname'] = 'brot.jpg';
+$REX['MEDIA']['FILENAME']['brot.jpg']['filesize'] = '129006';
+$REX['MEDIA']['FILENAME']['brot.jpg']['width'] = '1450';
+$REX['MEDIA']['FILENAME']['brot.jpg']['height'] = '667';
+$REX['MEDIA']['FILENAME']['brot.jpg']['title'] = '';
+$REX['MEDIA']['FILENAME']['brot.jpg']['createdate'] = '1417601654';
+$REX['MEDIA']['FILENAME']['brot.jpg']['updatedate'] = '1417602242';
+$REX['MEDIA']['FILENAME']['brot.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['brot.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['brot.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['brot.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['brot.jpg']['med_copyright'] = '';
+?>

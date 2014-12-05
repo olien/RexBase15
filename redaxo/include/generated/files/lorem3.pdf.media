@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['file_id'] = '3';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['filetype'] = 'application/pdf';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['filename'] = 'lorem3.pdf';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['originalname'] = 'lorem3.pdf';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['filesize'] = '79612';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['width'] = '0';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['height'] = '0';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['title'] = '';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['createdate'] = '1417601574';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['updatedate'] = '1417601574';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['lorem3.pdf']['med_copyright'] = '';
+?>

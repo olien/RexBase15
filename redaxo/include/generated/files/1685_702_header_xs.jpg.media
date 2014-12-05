@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['file_id'] = '49';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['filename'] = '1685_702_header_xs.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['originalname'] = '1685_702_header_xs.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['filesize'] = '39629';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['width'] = '600';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['height'] = '253';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['title'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['createdate'] = '1417791110';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['updatedate'] = '1417791110';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_header_xs.jpg']['med_copyright'] = '';
+?>
