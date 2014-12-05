@@ -1,0 +1,56 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ icon
+// #icon > .icon("\2606", after);
+// #icon > .inception("\2606", before);
+// #icon > .base(entypo);
+
+// @dependency: font.less
+
+// @namespace: #icon
+
+#icon {
+
+    // @method: .icon
+    // @usage: #icon > .icon("\2606", before);
+
+    .icon(@var-content: false, @var-direction: before) {
+        .recursion(@var-content, @var-direction) when not (@var-content = false) and (@var-direction = before) {
+            &:before {
+                content: "@{var-content}";
+            }
+        }
+        .recursion(@var-content, @var-direction) when not (@var-content = false) and (@var-direction = after) {
+            &:after {
+                content: "@{var-content}";
+            }
+        }
+        .recursion(@var-content, @var-direction);
+    }
+
+    // @method: .inception
+    // @usage: #icon > .inception("\2606", after);
+
+    .inception(@var-content, @var-direction: before) {
+        #icon > .icon(@var-content, @var-direction);
+    }
+
+    // @method: .base
+    // @usage: #icon > .base(entypo); // <'font-name'>
+
+    .base(@var-font-name: false) {
+        .recursion(@var-font-name) when not (@var-font-name = false) {
+            font-family: "@{var-font-name}";
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            #font > .smoothing(antialiased);
+        }
+        .recursion(@var-font-name);
+    }
+}

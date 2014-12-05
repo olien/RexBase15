@@ -1,0 +1,124 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ gradient
+// #gradient > .horizontal(#eee, #000);
+// #gradient > .horizontal(#eee, #000, #ff0000, 80%);
+// #gradient > .vertical(#eee, #000);
+// #gradient > .vertical(#eee, #000, #ff0000, 80%);
+// #gradient > .directional(45deg, #eee, #000);
+// #gradient > .directional(45deg, #eee, #000, #ff0000, 80%);
+// #gradient > .radial(#666, #fff);
+// #gradient > .striped(45deg, #555);
+
+// @namespace: #gradient
+
+#gradient {
+
+    // @method: .gradient
+    // @usage: #gradient > .gradient(@var-webkit-gradient, @var-webkit, @var-default, @var-color, @var-repeat);
+
+    .gradient(@var-webkit-gradient: false, @var-webkit: false, @var-default: false, @var-color: false, @var-repeat: false) {
+        .color-recursion(@var) when not (@var = false) {
+            background-color: @var;
+        }
+        .webkit-gradient-recursion(@var) when not (@var = false) {
+            background-image: -webkit-gradient(@var);
+        }
+        .webkit-recursion(@var) when not (@var = false) {
+            background-image: -webkit-linear-gradient(@var);
+            background-image:    -moz-linear-gradient(@var);
+            background-image:      -o-linear-gradient(@var);
+            background-image:     -ms-linear-gradient(@var);
+        }
+        .default-recursion(@var) when not (@var = false) {
+            background-image: linear-gradient(@var);
+        }
+        .repeat-recursion(@var) when not (@var = false) {
+            background-repeat: @var;
+        }
+        .color-recursion(@var-color);
+        .webkit-gradient-recursion(@var-webkit-gradient);
+        .webkit-recursion(@var-webkit-gradient);
+        .default-recursion(@var-default);
+        .repeat-recursion(@var-repeat);
+
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+    }
+
+    // @method: .recursion
+    // @usage: #gradient > .recursion(@start-color, @between-color, @end-color, @color-stop, @background-color, @direction-from, @direction-to, @origin);
+
+    .recursion(@start-color, @between-color, @end-color, @color-stop, @background-color, @direction-from, @direction-to, @origin) when not (iscolor(@between-color)) {
+        @var-webkit-gradient: linear, 0 0, @origin, from(@start-color), to(@end-color);
+        @var-webkit: @direction-to, @start-color, @end-color;
+        @var-default: to @direction-from, @start-color, @end-color;
+        #gradient > .gradient(@var-webkit-gradient, @var-webkit, @var-default, @end-color, repeat-x);
+    }
+    .recursion(@start-color, @between-color, @end-color, @color-stop, @background-color, @direction-from, @direction-to, @origin) when (iscolor(@between-color)) {
+        @var-webkit-gradient: @direction-from, linear, 0 0, @origin, from(@start-color), color-stop(@color-stop, @between-color), to(@end-color);
+        @var-webkit: @direction-to, @start-color, @between-color @color-stop, @end-color;
+        @var-default: to @direction-from, @start-color, @between-color @color-stop, @end-color;
+        #gradient > .gradient (@var-webkit-gradient, @var-webkit, @var-default, @end-color, repeat-x);
+    }
+
+    // @method: .horizontal
+    // @usage: #gradient > .horizontal(#eee, #000, #ff0000, 80%);
+    // @usage: #gradient > .horizontal(#eee, #000);
+
+    .horizontal(@start-color, @end-color, @between-color : "", @color-stop : 50%) {
+        #gradient > .recursion(@start-color, @between-color, @end-color, @color-stop, @end-color, right, left, 100% 0);
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color)));
+        .reset-filter;
+    }
+
+    // @method: .vertical
+    // @usage: #gradient > .vertical(#eee, #000, #ff0000, 80%);
+    // @usage: #gradient > .vertical(#eee, #000);
+
+    .vertical(@start-color, @end-color, @between-color : "", @color-stop : 50%) {
+        #gradient > .recursion(@start-color, @between-color, @end-color, @color-stop, mix(@start-color, @end-color, 60%), bottom, top, 0 100%);
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+        .reset-filter;
+    }
+
+    // @method: .directional
+    // @usage: #gradient > .directional(45deg, #eee, #000, #ff0000, 80%);
+    // @usage: #gradient > .directional(45deg, #eee, #000);
+
+    .directional(@deg: 45deg, @start-color, @end-color, @between-color : "", @color-stop : 50%) {
+        #gradient > .recursion(@start-color, @between-color, @end-color, @color-stop, @end-color, @deg, @deg, 100% 0);
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color)));
+        .reset-filter;
+    }
+
+    // @method: .radial
+    // @usage: #gradient > .radial(#666, #fff);
+
+    .radial(@inner-color, @outer-color) {
+        @var-webkit-gradient: radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color);
+        @var-webkit: circle, @inner-color, @outer-color;
+        @var-default: @var-webkit;
+        #gradient > .gradient(@var-webkit-gradient, @var-webkit, @var-default, @outer-color, no-repeat);
+    }
+
+    // @method: .striped
+    // @usage: #gradient > .striped(45deg, #555);
+
+    .striped(@deg, @color) {
+        @var-webkit-gradient: linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent);
+        @var-webkit: @deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent;
+        @var-default: @var-webkit;
+        #gradient > .gradient(@var-webkit-gradient, @var-webkit, @var-default, @color, inherit);
+    }
+}
+
+// @direct-method: .reset-filter
+// @usage: .reset-filter;
+
+// Reset filters for IE
+.reset-filter() {
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}

@@ -1,0 +1,48 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ visibility
+// #visibility > .hide-text;
+// #visibility > .invisible;
+// #visibility > .visible;
+// #visibility > .responsive;
+// #visibility > .print;
+// .hide-text;
+
+// @namespace: #visibility
+
+#visibility {
+
+    // @method: .hide-text
+    // @usage: #visibility > .hide-text;
+
+    .hide-text() {
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+    }
+
+    // @method: .invisible
+    // @usage: #visibility > .invisible;
+
+    .invisible() {
+        visibility: hidden;
+    }
+
+    // @method: .visible
+    // @usage: #visibility > .visible;
+
+    .visible() {
+        visibility: visible;
+    }
+}
+
+// @direct-method: .hide-text
+// @usage: .hide-text;
+
+.hide-text() {
+     #visibility > .hide-text;
+}

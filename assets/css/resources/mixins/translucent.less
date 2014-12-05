@@ -1,0 +1,55 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+
+// ----------------------------------------------------- ~ translucent
+// #translucent > .background(#f57e20, 0.5);
+// #translucent > .border(#f57e20, 0.5);
+// #translucent > .color(#f57e20, 0.5);
+
+// @dependency: background.less
+
+// @namespace: #translucent
+
+#translucent {
+
+    // @namespace: .background
+    // @usage: #translucent > .background(#f57e20, 0.5);
+
+    .background(@var-color, @var-alpha) {
+        .recursion(@var-color, @var-alpha) when (iscolor(@var-color)) and (isnumber(@var-alpha)) {
+            @var-hsla: hsla(hue(@var-color), saturation(@var-color), lightness(@var-color), @var-alpha);
+            @var-argb: argb(@var-hsla);
+            background-color: @var-hsla;
+            /* IE hacks */
+            zoom: 1;
+            background-color: transparent\9;
+            -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{var-argb}, endColorstr=@{var-argb})";
+                filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{var-argb}, endColorstr=@{var-argb})";
+        }
+        .recursion(@var-color, @var-alpha);
+    }
+
+    // @namespace: .border
+    // @usage: #translucent > .border(#f57e20, 0.5);
+
+    .border(@var-color, @var-alpha) {
+        .recursion(@var-color, @var-alpha) when (iscolor(@var-color)) and (isnumber(@var-alpha)) {
+            border-color: hsla(hue(@var-color), saturation(@var-color), lightness(@var-color), @var-alpha);
+            #background > .clip(padding-box);
+        }
+        .recursion(@var-color, @var-alpha);
+    }
+
+    // @namespace: .color
+    // @usage: #translucent > .color(#fff, 0.5);
+
+    .color(@var-color, @var-alpha) {
+        .recursion(@var-color, @var-alpha) when (iscolor(@var-color)) and (isnumber(@var-alpha)) {
+            color: hsla(hue(@var-color), saturation(@var-color), lightness(@var-color), @var-alpha);
+        }
+        .recursion(@var-color, @var-alpha);
+    }
+}

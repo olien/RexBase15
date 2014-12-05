@@ -1,0 +1,44 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ clear
+// #clear > .clearfix;
+// #clear > .both;
+// .cfx;
+
+// @namespace: #clear
+
+#clear {
+
+    // @method: .clearfix
+    // @usage: #clear > .clearfix;
+
+    .clearfix() {
+        *zoom: 1;
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+            line-height: 0;
+        }
+        &:after {
+            #clear > .both;
+        }
+    }
+
+    // @method: .both
+    // @usage: #clear > .both;
+
+    .both() {
+        clear: both;
+    }
+}
+
+// @direct-method: .cfx
+// @usage: .cfx;
+
+.cfx() {
+    #clear > .clearfix;
+}

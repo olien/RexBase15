@@ -1,0 +1,35 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ import lib
+@import "vendor/normalize";
+@import "vendor/h5b-main";
+@import "resources/_lib";
+
+
+// ----------------------------------------------------- ~ unset outline
+* {
+  #unset > .outline;
+//  border: 1px solid red;
+}
+
+// ----------------------------------------------------- ~ site layout
+html {
+    overflow-y: scroll;
+}
+body {
+    background: #e5e5e5;
+    #typo > .headlines(36px, 30px, 24px, 18px, 14px, 12px, 1.1, 20px, 1.1, 0.6, 65);
+}
+
+ .extern {
+    font-size: 14px;
+    &:after {
+      font-size: 10px;
+      padding: 5px 0 7px 5px;
+      font-family: 'FontAwesome';
+      content: "\f08e";
+      text-decoration: none;
+    }
+  }

@@ -1,0 +1,122 @@
+h1. rex_markitup – Redaxo Addon
+
+Kompletter rewrite des bisherigen Markitup Addons mit modernerer/flexiblerer Codebase
+
+h2. Features
+
+* Aktuelle MarkItUp Lib v.1.1.14
+* ImageManager Unterstützung
+* "smartinsert" Mode minimiert linebreak/whitespace Problematik für Einsteiger deutlich
+* Fullscreen Mode(Button)
+* Backend UI zum definieren eigener Buttons
+* EP zum programmatischen injizieren eigener Buttons aus anderen Addons/Plugins oder Modulen heraus
+* Definition einer Markitup textareas lediglich über eine CSS Klasse – kein PHP Code notwendig.
+* Auswahl von Buttons/Buttonsets per @data@ Attribut der textarea
+* Mehrsprachigkeit – gekoppelt an Redaxo backend Sprache - lang strings per i18n und *.lang Datei
+* Inline & Live(frontend) preview
+* Fluid Editor Layout …
+* … und ein klein wenig aufgehübscht das Ganze …
+
+h1. Anwendung im Modul
+
+h4. Aufruf per CSS Klasse
+
+bc. <textarea class="rex-markitup"></textarea>
+
+h4. Data Attribute
+
+bc. <textarea class="rex-markitup" data-buttonset="full"></textarea>
+<textarea class="rex-markitup" data-buttons="h1,h2,h3,|,…"></textarea>
+
+h1. Minimaler Modul Code
+
+*Input:*
+
+bc. <textarea name="VALUE[1]" class="rex-markitup" style="width:100%;min-height:150px">REX_HTML_VALUE[1]</textarea>
+
+*Output:*
+
+bc. $textile = htmlspecialchars_decode('REX_VALUE[1]',ENT_QUOTES);
+$textile = str_replace('<br />','',$textile);
+echo '<div class="txt-img">'. rex_a79_textile($textile) . '</div>';
+
+h1. Settings
+
+*IMM type condition* Beispiel:
+
+Folgende *WHERE* condition (MySQL syntax) schließt z.b. alle internen default imagetypes (rex_…) aus:
+
+bc. WHERE `name` NOT LIKE "rex_%"
+
+*Button CSS* Beispiel:
+
+bc. .markItUpButton.markitup-example a {
+    background-image: url('path/to/my/example.png');
+}
+
+*rex_markitup.buttondefinitions* Beispiel: (siehe auch "MarkItUp Doku":http://markitup.jaysalvat.com/documentation/#markupset)
+
+bc. examplebutton:
+{
+  name:         'Example Button',
+  openWith:     '[foobar]',
+  closeWith:    '[/foobar]',
+  beforeInsert: function(h) {
+    text = "You've just click the "+h.name+" button ";
+    text+= "which will wrap '"+h.selection+"' ";
+    text+= "with "+h.openWith+" and "+h.closeWith+".";
+    alert(text);
+  },
+  afterInsert:  function(h) {
+    text = "The result is now:\n";
+    text+= $(h.textarea).val();
+    alert(text);
+  },
+  placeHolder: 'Placeholder Text..'
+}
+
+*rex_markitup.buttonsets* Beispiel:
+
+bc. exampleset:
+'h1,h2,h3,|,bold,italic,examplebutton'
+
+h1. Frontend/Live Preview
+
+In *rex_markitup.options* muß @previewfrontend@ auf @true@ gesetzt werden. Desweiteren muß in der Modulausgabe folgende Funktion verwendet werden:
+
+bc. $textile = rex_markitup_preview('REX_SLICE_ID', 'VALUE[n]', 'REX_VALUE[n]');
+$textile = rex_a79_textile($textile);
+
+*Hinweis:* Um die live preview nutzen zu können muß im frontend eine Session aktiv sein:
+
+bc. if(!session_id()) {
+  session_start();
+}
+
+h1. Known issues
+
+* *Safari & Chrome*
+** Der Popup-Blocker "verhindert die linkmap/mediapool popups":https://github.com/jdlx/rex_markitup/issues/13 welche von rex_markitup aufgerufen werden.
+*** *Abhilfe @ Chrome:* in der URL-Zeile erfolgt eine kurze Einblendung über den geblockten popup -> draufklicken und page zur whitelist hinzufügen.
+*** *Abhilfe @ Safari 5:* keine whitelist Option -> blocker vorübergehend deaktivieren per key-combo `Apfel-Shift-K`.
+*** *Abhilfe @ Safari 6:* keine whitelist Option -> blocker deaktivieren @ Preferences > Security tab.
+*** *Safari 7:* hat das Problem nicht.
+** Safari - scheinbar egal welche Version - pastet bei Abbruch eines Aufrufs von "interner Link/Mailto Link" den default Platzhalter in den Text.
+
+ <div class="screenshots">
+
+h1. Screenshots
+
+h4. Editor @ agk_skin => fixed with parent elem
+
+!http://rexdev.de/index.php?rex_img_type=github_readme&rex_img_file=lnk_rex_markitup_editor_agk_skin.png!
+
+h4. Editor @ fullscreen mode
+
+!http://rexdev.de/index.php?rex_img_type=github_readme&rex_img_file=lnk_rex_markitup_editor_fullscreen.png!
+
+h4. Editor @ rexdev_skin => fluid with parent elem
+
+!http://rexdev.de/index.php?rex_img_type=github_readme&rex_img_file=lnk_rex_markitup_editor_rexdev_skin.png!
+
+ </div>

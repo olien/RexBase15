@@ -1,0 +1,61 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ opacity
+// #transparency > .opacity(0.5);
+// #transparency > .background(@black, 0.5);
+// #transparency > .border(@black, 0.5);
+// #transparency > .color(@black, 0.5);
+// .opacity(0.5);
+
+// @dependency: translucent.less
+// @dependency: background.less
+
+// @namespace: #transparency
+
+#transparency {
+
+    // @method: .opacity
+    // @usage: #transparency > .opacity(0.5);
+
+    .opacity(@var-alpha) {
+        .recursion(@var-alpha) when (isnumber(@var-alpha)) {
+            @var-ms : @var-alpha * 100;
+            -webkit-opacity: @var-alpha;
+             -khtml-opacity: @var-alpha;
+               -moz-opacity: @var-alpha;
+                    opacity: @var-alpha;
+                 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{var-ms})";
+        }
+        .recursion(@var-alpha);
+    }
+
+    // @method: .background
+    // @usage: #transparency > .background(@black, 0.5);
+
+    .background(@var-color, @var-alpha) {
+        #translucent > .background(@var-color, @var-alpha);
+    }
+
+    // @method: .border
+    // @usage: #transparency > .border(@black, 0.5);
+
+    .border(@var-color, @var-alpha) {
+        #translucent > .border(@var-color, @var-alpha);
+    }
+
+    // @method: .color
+    // @usage: #transparency > .color(@black, 0.5);
+
+    .color(@var-color, @var-alpha) {
+        #translucent > .color(@var-color, @var-alpha);
+    }
+}
+
+// @direct-method: .opacity
+// @usage: .opacity(0.5);
+
+.opacity(@var-alpha) {
+    #transparency > .opacity(@var-alpha);
+}

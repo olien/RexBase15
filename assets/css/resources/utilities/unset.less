@@ -1,0 +1,93 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ unsets
+// #unset > .distances;
+// #unset > .list;
+// #unset > .outline;
+// #unset > #grid > .column;
+// #unset > #grid > .row;
+// #unset > #grid > .wrapper;
+
+// @namespace: #unset
+
+#unset {
+
+    // @method: .distances
+    // @usage: #unset > .distances;
+
+    .distances() {
+        margin: 0;
+        padding: 0;
+    }
+
+    // @method: .list
+    // @usage: #unset > .list;
+
+    .list() {
+        #unset > .distances;
+        list-style: none;
+
+        li {
+            #unset > .distances;
+        }
+    }
+
+    // @method: .outline
+    // @usage: #unset > .outline;
+
+    .outline() {
+        outline: 0 none !important;
+
+        &:hover,
+        &:focus,
+        &:visited,
+        &:active {
+            outline: 0 none !important;
+        }
+        &::-moz-focus-inner {
+            border: 0 solid transparent;
+        }
+    }
+
+    // @namespace: #grid
+
+    #grid {
+
+        // @method: .column
+        // @usage: #unset > #grid > .column;
+
+        .column() {
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+            float: inherit;
+            #box > .display(block);
+        }
+
+        // @method: .column
+        // @usage: #unset > #grid > .column;
+
+        .offset() {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        // @method: .row
+        // @usage: #unset > #grid > .row;
+
+        .row() {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        // @method: .wrapper
+        // @usage: #unset > #grid > .wrapper;
+
+        .wrapper() {
+            width: auto;
+        }
+    }
+}

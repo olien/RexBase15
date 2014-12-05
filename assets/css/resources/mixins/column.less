@@ -1,0 +1,108 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ column
+// #column > .count(1); // number|auto|initial|inherit
+// #column > .fill(balance); // balance|auto|initial|inherit
+// #column > .gap(normal); // length|normal|initial|inherit
+// #column > .rule(); // column-rule-width column-rule-style column-rule-color|initial|inherit
+// #column > .rule-color(#ff0000); // color|initial|inherit
+// #column > .rule-width(1px); // medium|thin|thick|length|initial|inherit
+// #column > .rule-style(dotted); // none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit
+// #column > .span(1); // 1|all|initial
+// #column > .width(200px); // auto|length|initial|inherit
+// #column > .columns(~"100px 3"); auto|column-width column-count|initial|inherit
+
+// @namespace: #column
+
+#column {
+
+    // @method: .count
+    // @usage: #column > .count(1); // number|auto|initial|inherit
+
+    .count(@var-count) {
+        -webkit-column-count: @var-count;
+        -moz-column-count: @var-count;
+        column-count: @var-count;
+    }
+
+    // @method: .fill
+    // @usage: #column > .fill(balance); // balance|auto|initial|inherit
+
+    .fill(@var-fill) {
+        column-fill: @var-fill;
+    }
+
+    // @method: .gap
+    // @usage: #column > .gap(normal); // length|normal|initial|inherit
+
+    .gap(@var-gap){
+        -webkit-column-gap: @var-gap;
+        -moz-column-gap: @var-gap;
+        column-gap: @var-gap;
+    }
+
+    // @method: .rule
+    // @usage: #column > .rule(); // column-rule-width column-rule-style column-rule-color|initial|inherit
+
+    .rule(@var-rule) {
+        -webkit-column-rule: @var-rule;
+        -moz-column-rule: @var-rule;
+        column-rule: @var-rule;
+    }
+
+    // @method: .rule-color
+    // @usage: #column > .rule-color(#ff0000); // color|initial|inherit
+
+    .rule-color(@var-color) {
+        -webkit-column-rule-color: @var-color;
+        -moz-column-rule-color: @var-color;
+        column-rule-color: @var-color;
+    }
+
+    // @method: .rule-width
+    // @usage: #column > .rule-width(1px); // medium|thin|thick|length|initial|inherit
+
+    .rule-width(@var-width) {
+        -webkit-column-rule-width: @var-width;
+        -moz-column-rule-width: @var-width;
+        column-rule-width: @var-width;
+    }
+
+    // @method: .rule-style
+    // @usage: #column > .rule-style(dotted); // none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit
+
+    .rule-style(@var-style) {
+        -webkit-column-rule-style: @var-style;
+        -moz-column-rule-style: @var-style;
+        column-rule-style: @var-style;
+    }
+
+    // @method: .span
+    // @usage: #column > .span(1); // 1|all|initial
+
+    .span(@var-span) {
+        -webkit-column-span: @var-span;
+        -moz-column-span: @var-span;
+        column-span: @var-span;
+    }
+
+    // @method: .width
+    // @usage: #column > .width(200px); // auto|length|initial|inherit
+
+    .width(@var-width) {
+        -webkit-column-width: @var-width;
+        -moz-column-width: @var-width;
+        column-width: @var-width;
+    }
+
+    // @method: .columns
+    // @usage: #column > .columns(~"100px 3"); auto|column-width column-count|initial|inherit
+
+    .columns(@var-columns) {
+        -webkit-columns: @var-columns;
+        -moz-columns: @var-columns;
+        columns: @var-columns;
+    }
+}

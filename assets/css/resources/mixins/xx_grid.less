@@ -1,0 +1,162 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ grid
+// #grid > .wrapper(12, 70px, 30px);
+// #grid > .row(30px);
+// #grid > .column(1, 70px, 30px);
+// #grid > .offset(1, 70px, 30px, right);
+// #grid > .offset-left(1, 70px, 30px);
+// #grid > .offset-right(1, 70px, 30px);
+
+// #grid > .wrapper(940px);
+// #grid > .row(30px);
+// #grid > .column(3, 12, 20px);
+// #grid > .offset(2, 12, right);
+// #grid > .offset-left(2, 12);
+// #grid > .offset-right(2, 12);
+
+// @dependency: clearing.less
+// @dependency: float.less
+// @dependency: box.less
+
+// @namespace: #grid
+
+#grid {
+
+    // @method: .wrapper
+    // @usage: #grid > .wrapper(12, 70px, 30px);
+
+    .wrapper(@number-of-columns-or-min-width: @base-number-of-columns, @column-width: @base-column-width, @gutter-width: @base-gutter-width) {
+        .recursion(@number-of-columns, @column-width, @gutter-width) when not (ispixel(@number-of-columns)) and (ispixel(@column-width)) and (ispixel(@gutter-width)) {
+            #base > .center;
+            width: (((@column-width * @number-of-columns) + (@gutter-width * @number-of-columns)) - @gutter-width);
+        }
+        .recursion(@min-width, @column-width, @gutter-width) when (ispixel(@min-width)) {
+            #base > .center;
+            max-width: @min-width;
+        }
+        .recursion(@number-of-columns-or-min-width, @column-width, @gutter-width);
+    }
+
+    // @method: .row
+    // @usage: #grid > .row(30px);
+
+    .row(@gutter-width: @base-gutter-width) {
+        .recursion(@gutter-width) when (ispixel(@gutter-width)) {
+            #clear > .clearfix;
+            margin-left: -(@gutter-width);
+            margin-right: -(@gutter-width);
+        }
+        .recursion(@gutter-width);
+    }
+
+    // @method: .column
+    // @usage: #grid > .column(1, 70px, 30px);
+
+    .column(@index: 1, @column-width-or-number-of-columns: @base-column-width, @left-or-base-gutter-width: @base-gutter-width) {
+        .recursion(@index, @column-width, @left-gutter-width) when (isnumber(@index)) and (@index > 0) and (ispixel(@column-width)) and (ispixel(@left-gutter-width)) {
+            #float > .left;
+            width: ((@column-width * @index) + (@left-gutter-width * (@index - 1 )));
+            margin-left: @left-gutter-width;
+        }
+        .recursion(@index, @number-of-columns, @base-gutter-width) when (isnumber(@index)) and (@index > 0) and not (ispixel(@number-of-columns)) and (ispixel(@base-gutter-width)) {
+            #box > .sizing(border-box);
+            #float > .left;
+            width: percentage((@index / @number-of-columns));
+            padding-left: @base-gutter-width;
+            padding-right: @base-gutter-width;
+        }
+        .recursion(@index, @column-width-or-number-of-columns, @left-or-base-gutter-width);
+    }
+
+    // @method: .offset
+    // @usage: #grid > .offset(1, 70px, 30px, right);
+
+    .offset(@index: 1, @column-width-or-number-of-columns: @base-column-width, @gutter-width-or-direction: @base-gutter-width, @direction: left) {
+        .recursion-pixel(@index, @column-width, @gutter-width, @direction) when (@direction = left) {
+            margin-left: ((@column-width * @index) + (@gutter-width * (@index + 1)));
+        }
+        .recursion-pixel(@index, @column-width, @gutter-width, @direction) when (@direction = right) {
+            margin-right: ((@column-width * @index) + (@gutter-width * (@index + 1)));
+        }
+        .recursion-percentage(@index, @number-of-columns, @direction) when (@direction = left) {
+            margin-left: percentage((@index / @number-of-columns));
+        }
+        .recursion-percentage(@index, @number-of-columns, @direction) when (@direction = right) {
+            margin-right: percentage((@index / @number-of-columns));
+        }
+        .recursion-request(@index, @column-width, @gutter-width, @direction) when (isnumber(@index)) and (@index > 0) and (ispixel(@column-width)) and (ispixel(@gutter-width)) {
+            .recursion-pixel(@index, @column-width, @gutter-width, @direction);
+        }
+        .recursion-request(@index, @number-of-columns, @gutter-width, @direction) when (isnumber(@index)) and (@index > 0) and not (ispixel(@number-of-columns)) and (ispixel(@gutter-width)) {
+            .recursion-percentage(@index, @number-of-columns, @direction);
+        }
+        .recursion-request(@index, @number-of-columns, @direction, @direction-off) when (isnumber(@index)) and (@index > 0) and not (ispixel(@number-of-columns)) and not (ispixel(@direction)) {
+            .recursion-percentage(@index, @number-of-columns, @direction);
+        }
+        .recursion-request(@index, @column-width-or-number-of-columns, @gutter-width-or-direction, @direction);
+    }
+
+    // @method: .offset-left
+    // @usage: #grid > .offset-left(1, 70px, 30px);
+
+    .offset-left(@index: 1, @column-width: @base-column-width, @gutter-width: @base-gutter-width) {
+        #grid > .offset(@index, @column-width, @gutter-width, left);
+    }
+
+    // @method: .offset-right
+    // @usage: #grid > .offset-right(1, 70px, 30px);
+
+    .offset-right(@index: 1, @column-width: @base-column-width, @gutter-width: @base-gutter-width) {
+        #grid > .offset(@index, @column-width, @gutter-width, right);
+    }
+}
+
+// @namespace: #fluid-grid
+
+#fluid-grid {
+
+    // @method: .wrapper
+    // @usage: #fluid-grid > .wrapper(1200px);
+
+    .wrapper(@min-width: @base-fluid-width) {
+        #grid > .wrapper(@min-width);
+    }
+
+    // @method: .row
+    // @usage: #fluid-grid > .row(30px);
+
+    .row(@gutter-width: @base-gutter-width) {
+        #grid > .row(@gutter-width);
+    }
+
+    // @method: .column
+    // @usage: #fluid-grid > .column(1, 70px, 30px);
+
+    .column(@index: 1, @number-of-columns: @base-number-of-columns, @gutter-width: @base-gutter-width) {
+        #grid > .column(@index, @number-of-columns, @gutter-width);
+    }
+
+    // @method: .offset
+    // @usage: #fluid-grid > .offset(1, 12, right);
+
+    .offset(@index: 1, @number-of-columns: @base-number-of-columns, @direction: left) {
+        #grid > .offset(@index, @number-of-columns, @direction);
+    }
+
+    // @method: .offset-left
+    // @usage: #fluid-grid > .offset-left(1, 12);
+
+    .offset-left(@index: 1, @number-of-columns: @base-number-of-columns) {
+        #grid > .offset(@index, @number-of-columns, left);
+    }
+
+    // @method: .offset-right
+    // @usage: #fluid-grid > .offset-right(1, 12);
+
+    .offset(@index: 1, @number-of-columns: @base-number-of-columns) {
+        #grid > .offset(@index, @number-of-columns, right);
+    }
+}

@@ -1,0 +1,35 @@
+<h2>Changelog:</h2>
+
+
+<strong>1.1.3 - 16.06.2011</strong>
+- Krumo funktioniert nur mit PHP 5 -> Versionsabfrage eingefügt
+
+<strong>1.1.2 - 22.05.2011</strong>
+- rex_hasBackendSession() wird zur Überprüfung des Benutzers im Backend verwendet
+  (http://www.redaxo.org/de/forum/post92531.html#p92531)
+- kleine Sicherungsfunktion für Sessions eingebaut
+  
+<strong>1.1.1 - 18.05.2011</strong>
+- Im Frontend werden nur noch Debugmeldungen ausgegeben, wenn man gleichzeitig im Backend angemeldet ist.
+  Der normale Benutzer bekommt dadurch keinerlei Debug-Meldungen mehr zu sehen.
+  http://www.redaxo.org/de/forum/post92510.html#p92510
+
+<strong>1.1.0 - 26.01.2011</strong>
+- Settings können angelegt werden (de-/aktivieren der einzelnen Debug-Funktionen/Klassen)
+- Dummyfunktionen angelegt (wenn Debug-Funktion deaktiviert, gibt es bei Verwendung der Funktionen keine Fehlermeldung)
+
+
+<strong>1.0.0 - 14.01.2011</strong>
+- Addon in ko_debug umbenannt
+- Dateien zu UTF8 geändert
+- Anpassungen an Redaxo 4
+- Krumo integriert
+
+
+
+<strong>03.11.2007</strong>
+- DebugOut-Funktion überarbeitet; Trennung nach Array und normaler Variable aufgehoben  
+- Kurzform DBO() eingefügt
+
+<strong>10.09.2006</strong>
+first release

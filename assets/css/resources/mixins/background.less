@@ -1,0 +1,194 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ background
+// #background > .background(transparent, ~"../img/logo.png", no-repeat, center center, fixed);
+// #background > .background(~"transparent url(../img/logo.png) no-repeat center center");
+// #background > .background(#f57e20, 0.5);
+// #background > .background(#f57e20);
+// #background > .repeat(fixed); // repeat-x|repeat-y|no-repeat|repeat
+// #background > .position(~"left top"); // percentage|length|top|center|left|bottom
+// #background > .attachment(fixed); // scroll|fixed|local
+// #background > .clip(border-box); // padding-box|border-box|content-box
+// #background > .origin(padding-box); // padding-box|border-box|content-box
+// #background > .size(contain); // length|percentage|cover|contain
+// #background > .size(100px, 20%);
+// .background(transparent, ~"../img/logo.png", no-repeat, center center);
+
+// @dependency: translucent.less
+
+// @namespace: #background
+
+#background {
+
+    // @method: .background
+    // @usage: #background > .background(transparent, ~"../img/logo.png", no-repeat, center center, fixed); // repeat-x|repeat-y|no-repeat|repeat // top|center|left|bottom // scroll|fixed|local
+    // @usage: #background > .background(~"transparent url(../img/logo.png) no-repeat center center");
+    // @usage: #background > .background(#f57e20, 0.5);
+    // @usage: #background > .background(#f57e20);
+
+    .background(@var-color: transparent, @var-image: false, @var-repeat: false, @var-position: false, @var-attachment: false) {
+        .recursion(@var, @var-image) when (isstring(@var)) and (@var-image = false) {
+            background: @var;
+        }
+        .recursion(@var-color, @var-image) when (@var-color = transparent) {
+            background: @var-color;
+        }
+        .recursion(@var-color, @var-image) when (iscolor(@var-color)) and not (isnumber(@var-image)) {
+            background: @var-color;
+        }
+        .recursion(@var-color, @var-image) when not (@var-image = false) and not (isnumber(@var-image)) {
+            background-image: url(@var-image);
+        }
+        .translucent-recursion(@var-color, @var-opacity) when (iscolor(@var-color)) and not (@var-opacity = false) and (isnumber(@var-opacity)) {
+            #translucent > .background(@var-color, @var-opacity);
+        }
+        .repeat-recursion(@var-repeat) when not (@var-repeat = false) {
+            #background > .repeat(@var-repeat);
+        }
+        .position-recursion(@var-position) when not (@var-position = false) {
+            #background > .position(~"@{var-position}");
+        }
+        .attachment-recursion(@var-attachment) when not (@var-attachment = false) {
+            #background > .attachment(@var-attachment);
+        }
+        .recursion(@var-color, @var-image);
+        .translucent-recursion(@var-color, @var-image);
+        .repeat-recursion(@var-repeat);
+        .position-recursion(@var-position);
+        .attachment-recursion(@var-attachment);
+    }
+
+    // @method: .repeat
+    // @usage: #background > .repeat(fixed); // repeat-x|repeat-y|no-repeat|repeat
+
+    .repeat(@var-repeat: repeat) {
+        .recursion(@var-repeat) {
+            background-repeat: @var-repeat;
+        }
+        .recursion-request(@var-repeat) when (@var-repeat = repeat-x) {
+            .recursion(@var-repeat);
+        }
+        .recursion-request(@var-repeat) when (@var-repeat = repeat-y) {
+            .recursion(@var-repeat);
+        }
+        .recursion-request(@var-repeat) when (@var-repeat = no-repeat) {
+            .recursion(@var-repeat);
+        }
+        .recursion-request(@var-repeat) when (@var-repeat = repeat) {
+            .recursion(@var-repeat);
+        }
+        .recursion-request(@var-repeat);
+    }
+
+    // @method: .position
+    // @usage: #background > .position(~"left top"); // percentage|length|top|center|left|bottom
+    // @usage: #background > .position(left, top);
+    // @usage: #background > .position(50%, 50%);
+
+    .position(@var-x: left, @var-y: top) {
+        .recursion(@var) {
+            background-position: @var;
+        }
+        .recursion-request(@var, @var-y) when (isstring(@var)) {
+            .recursion(@var);
+        }
+        .recursion-request(@var-x, @var-y) when (isnumber(@var-x)) and (isnumber(@var-y)) {
+            .recursion(@var-x @var-y);
+        }
+        .recursion-request(@var-x, @var-y);
+    }
+
+    // @method: .attachment
+    // @usage: #background > .attachment(fixed); // scroll|fixed|local
+
+    .attachment(@var: scroll) {
+        .recursion(@var) {
+            background-attachment: @var;
+        }
+        .recursion-request(@var) when (@var = scroll) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = fixed) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = local) {
+            .recursion(@var);
+        }
+        .recursion-request(@var);
+    }
+
+    // @method: .clip
+    // @usage: #background > .clip(border-box); // border-box|padding-box|content-box
+
+    .clip(@var: border-box) {
+        .recursion(@var) {
+        -webkit-background-clip: @var;
+           -moz-background-clip: @var;
+             -o-background-clip: @var;
+                background-clip: @var;
+        }
+        .recursion-request(@var) when (@var = border-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = padding-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = content-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var);
+    }
+
+    // @method: .origin
+    // @usage: #background > .origin(padding-box); // padding-box|border-box|content-box
+
+    .origin(@var: padding-box) {
+        .recursion(@var) {
+        -webkit-background-origin: @var;
+           -moz-background-origin: @var;
+             -o-background-origin: @var;
+                background-origin: @var;
+        }
+        .recursion-request(@var) when (@var = border-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = padding-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var) when (@var = content-box) {
+            .recursion(@var);
+        }
+        .recursion-request(@var);
+    }
+
+    // @method: .size
+    // @usage #background > .size(100px, 100px); // length|percentage|cover|contain
+    // @usage #background > .size(contain);
+
+    .size(@var-width: contain, @var-height: false) {
+        .recursion(@var) {
+            -webkit-background-size: @var;
+               -moz-background-size: @var;
+                 -o-background-size: @var;
+                    background-size: @var;
+        }
+        .recursion-request(@var, @var-height) when not (isnumber(@var)) and (@var-height = false) {
+            .recursion(@var);
+        }
+        .recursion-request(@var-width, @var-height) when (isnumber(@var-width)) and (isnumber(@var-height)) {
+            .recursion(@var-width @var-height);
+        }
+        .recursion-request(@var-width, @var-height);
+    }
+}
+
+// @direct methode: .background
+// @usage: .background(transparent, ~"../img/logo.png", no-repeat, center center);
+// @usage: .background(#f57e20, 0.5);
+// @usage: .background(#f57e20);
+
+.background(@var-color: transparent, @var-image: false, @var-repeat: false, @var-position: false, @var-attachment: false) {
+    #background > .background(@var-color, @var-image, @var-repeat, @var-position, @var-attachment);
+}

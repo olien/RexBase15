@@ -1,0 +1,188 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ animation
+// #animation > .animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");
+// #animation > .delay(~"200ms, 2s");
+// #animation > .direction(~"normal, alternate");
+// #animation > .duration(~"3s, 2s");
+// #animation > .fill-mode(forwards);
+// #animation > .timing-function(ease-in-out);
+// #animation > .iteration-count(3);
+// #animation > .name(myanimation);
+// #animation > .play-state(paused);
+// .animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");
+
+// @namespace: #animation
+
+#animation {
+
+    // @method: .animation
+    // @usage: #animation > .animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");
+
+    .animation(@var-animation) {
+        .recursion(@var-animation) when (isstring(@var-animation)) {
+            -webkit-animation: @var-animation;
+               -moz-animation: @var-animation;
+                -ms-animation: @var-animation;
+                 -o-animation: @var-animation;
+                    animation: @var-animation;
+        }
+        .recursion(@var-animation);
+    }
+
+    // @method: .delay
+    // @usage: #animation > .delay(2s);
+
+    .delay(@var-delay) {
+        .recursion(@var-delay) when (isnumber(@var-delay)) {
+            -webkit-animation-delay: @var-delay;
+               -moz-animation-delay: @var-delay;
+                -ms-animation-delay: @var-delay;
+                 -o-animation-delay: @var-delay;
+                    animation-delay: @var-delay;
+        }
+        .recursion(@var-delay);
+    }
+
+    // @method: .direction
+    // @usage: #animation > .direction(~"normal, alternate");
+
+    .direction(@var-direction) {
+        .recursion(@var-direction) when (isstring(@var-direction)) {
+            -webkit-animation-direction: @var-direction;
+               -moz-animation-direction: @var-direction;
+                -ms-animation-direction: @var-direction;
+                 -o-animation-direction: @var-direction;
+                    animation-direction: @var-direction;
+        }
+        .recursion(@var-direction);
+    }
+
+    // @method: .duration
+    // @usage: #animation > .duration(~"3s, 2s");
+
+    .duration(@var-duration) {
+        .recursion(@var-duration) when (isstring(@var-duration)) {
+            -webkit-animation-duration: @var-duration;
+               -moz-animation-duration: @var-duration;
+                -ms-animation-duration: @var-duration;
+                 -o-animation-duration: @var-duration;
+                    animation-duration: @var-duration;
+        }
+        .recursion(@var-duration);
+    }
+
+    // @method: .fill-mode
+    // @usage: #animation > .fill-mode(forwards); // none|forwards|backwards|both
+
+    .fill-mode(@var-mode: none) {
+        .recursion(@var-mode) {
+            -webkit-animation-fill-mode: @var-mode;
+               -moz-animation-fill-mode: @var-mode;
+                 -o-animation-fill-mode: @var-mode;
+                    animation-fill-mode: @var-mode;
+        }
+        .recursion-request(@var-mode) when (@var-mode = none) {
+            .recursion(@var-mode);
+        }
+        .recursion-request(@var-mode) when (@var-mode = forwards) {
+            .recursion(@var-mode);
+        }
+        .recursion-request(@var-mode) when (@var-mode = backwards) {
+            .recursion(@var-mode);
+        }
+        .recursion-request(@var-mode) when (@var-mode = both) {
+            .recursion(@var-mode);
+        }
+        .recursion-request(@var-mode);
+    }
+
+    // @method: .timing-function
+    // @usage: #animation > .timing-function(ease-in-out); linear|ease-in-out|ease-in|ease-out|ease|cubic-bezier(n,n,n,n)
+
+    .timing-function(@var-function: linear) {
+        .recursion(@var-function) {
+            -webkit-animation-timing-function: @var-function;
+               -moz-animation-timing-function: @var-function;
+                -ms-animation-timing-function: @var-function;
+                 -o-animation-timing-function: @var-function;
+                    animation-timing-function: @var-function;
+        }
+        .recursion-request(@var-function) when (@var-function = linear) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function) when (@var-function = ease-in-out) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function) when (@var-function = ease-in) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function) when (@var-function = ease-out) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function) when (@var-function = ease) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function) when (isstring(@var-function)) {
+            .recursion(@var-function);
+        }
+        .recursion-request(@var-function);
+    }
+
+    // @method: .iteration-count
+    // @usage: #animation > .iteration-count(3);
+
+    .iteration-count(@var-count) {
+        .recursion(@var-count) when (isnumber(@var-count)) {
+            -webkit-animation-iteration-count: @var-count;
+               -moz-animation-iteration-count: @var-count;
+                -ms-animation-iteration-count: @var-count;
+                 -o-animation-iteration-count: @var-count;
+                    animation-iteration-count: @var-count;
+        }
+        .recursion(@var-count);
+    }
+
+    // @method: .name
+    // @usage: #animation > .name(myanimation);
+
+    .name(@var-name) {
+        .recursion(@var-name) when not (isurl(@var-name)) {
+            -webkit-animation-name: @var-name;
+               -moz-animation-name: @var-name;
+                -ms-animation-name: @var-name;
+                 -o-animation-name: @var-name;
+                    animation-name: @var-name;
+        }
+        .recursion(@var-name);
+    }
+
+    // @method: .play-state
+    // @usage: #animation > .play-state(paused); running|paused
+
+    .play-state(@var-state) {
+        .recursion(@var-state) {
+            -webkit-animation-play-state: @var-state;
+               -moz-animation-play-state: @var-state;
+                -ms-animation-play-state: @var-state;
+                 -o-animation-play-state: @var-state;
+                    animation-play-state: @var-state;
+        }
+        .recursion-request(@var-state) when (@var-state = running) {
+            .recursion(@var-state);
+        }
+        .recursion-request(@var-state) when (@var-state = paused) {
+            .recursion(@var-state);
+        }
+        .recursion-request(@var-state);
+    }
+}
+
+// @direct methode: .animation
+// @usage: .animation(~"my-animation 6s backwards 2s, my-second-animation 3s linear alternate infinite");
+
+.animation(@var-animation) {
+     #animation > .animation(@var-animation);
+}

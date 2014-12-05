@@ -1,0 +1,53 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ form
+// #form > .placeholder(#ccc);
+// #form > .resize(both);
+
+// @var-namespace: #form
+
+#form {
+
+    // @method: .placeholder
+    // @usage: #form > .placeholder(#ccc);
+
+    .placeholder(@var) {
+        .recursion(@var) when (iscolor(@var)){
+            &:-moz-placeholder {
+                color: @var;
+            }
+            &::-moz-placeholder {
+                color: @var;
+            }
+            &:-ms-input-placeholder {
+                color: @var;
+            }
+            &::-webkit-input-placeholder {
+                color: @var;
+            }
+        }
+        .recursion(@var);
+    }
+
+    // @method: .resize
+    // @usage: #form > .resize(horizontal);
+
+    .resize (@var-direction: horizontal) {
+        .recursion(@var-direction) {
+            resize: @var-direction; // Options: horizontal, vertical, both
+            overflow: auto; // Safari fix
+        }
+        .recursion-request(@var-direction) when (@var-direction = horizontal) {
+            .recursion(@var-direction);
+        }
+        .recursion-request(@var-direction) when (@var-direction = vertical) {
+            .recursion(@var-direction);
+        }
+        .recursion-request(@var-direction) when (@var-direction = both) {
+            .recursion(@var-direction);
+        }
+        .recursion-request(@var-direction);
+    }
+}

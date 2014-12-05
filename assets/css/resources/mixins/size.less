@@ -1,0 +1,38 @@
+// basecondition ~ less-framework ~ v3.2.2
+// copyright 2014 ~ Joachim Doerr ~ hello@basecondition.com
+// licensed under MIT or GPLv3 ~ git.io/OJYZgw
+
+// ----------------------------------------------------- ~ size
+// #size > .size(500px, 300px);
+// #size > .size(100%);
+// #size > .square(100%);
+
+// @namespace: #size
+
+#size {
+
+    // @method: .size
+    // @usage: #size > .size(100px, 100px);
+    // @usage: #size > .size(100px);
+
+    .size(@var-width: false, @var-height: false) {
+        .recursion(@var-width, @var-height) {
+            width: @var-width;
+            height: @var-height;
+        }
+        .recursion-request(@var-width, @var-height) when (isnumber(@var-width)) and (isnumber(@var-height)) {
+            .recursion(@var-width, @var-height);
+        }
+        .recursion-request(@var-width, @var-height) when (isnumber(@var-width)) and (@var-height = false) {
+            .recursion(@var-width, @var-width);
+        }
+        .recursion-request(@var-width, @var-height);
+    }
+
+    // @mehtode: .square
+    // @usage: #size > .square(100px);
+
+    .square(@var-size) {
+        #size > .size(@var-size);
+    }
+}
