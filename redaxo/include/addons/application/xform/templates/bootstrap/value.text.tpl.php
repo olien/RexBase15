@@ -1,4 +1,4 @@
-<?php
+rsthrth<?php
 
 
     $type = isset($type) ? $type : 'text';
@@ -16,3 +16,4 @@
     <input class="<?php echo $class_control ?>" type="<?php echo $type ?>" name="<?php echo $this->getFieldName() ?>" id="<?php echo $this->getFieldId() ?>" value="<?php echo htmlspecialchars($value) ?>"<?php echo $this->getAttributeElement('placeholder'), $this->getAttributeElement('autocomplete'), $this->getAttributeElement('pattern'), $this->getAttributeElement('required', true), $this->getAttributeElement('disabled', true), $this->getAttributeElement('readonly', true) ?> />
     <?php echo $notice ?>
 </div>
+

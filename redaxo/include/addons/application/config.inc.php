@@ -35,7 +35,7 @@ if (is_dir($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/xform')) {
 
             if (is_dir($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/xform/' . $dir)) {
 
-                $REX['ADDON']['xform']['templatepaths'][] = $REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/xform/' . $dir . '/';
+                $REX['ADDON']['xform']['templatepaths'][$dir] = $REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/xform/' . $dir . '/';
 
             }
         }

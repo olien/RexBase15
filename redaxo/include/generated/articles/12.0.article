@@ -1,6 +1,6 @@
 <?php
 $REX['ART'][12]['article_id'][0] = '12';
-$REX['ART'][12]['last_update_stamp'][0] = '1418036230';
+$REX['ART'][12]['last_update_stamp'][0] = '1418047731';
 $REX['ART'][12]['pid'][0] = '12';
 $REX['ART'][12]['re_id'][0] = '0';
 $REX['ART'][12]['name'][0] = 'Main 2';

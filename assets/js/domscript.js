@@ -22,4 +22,25 @@ $("a[href^='https://']").attr('target', '_blank');
          }, 500);
      });
 
+
+$(document).on('submit', '#rex-xform form', function()
+{
+  $(this).ajaxSubmit({
+  //  clearForm: true,
+    success: function(responseText, statusText, xhr, $form)
+    {
+
+console.log(responseText);
+
+      $('#rex-xform').replaceWith($('#rex-xform', responseText));
+      $('input[type=submit]', this).removeClass('loading').removeAttr('disabled');
+    }
+  });
+
+
+    $('input[type=submit]', this).attr('disabled','disabled').addClass('loading');
+   return false;
+});
+
+
 });

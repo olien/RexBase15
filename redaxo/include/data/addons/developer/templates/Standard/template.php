@@ -62,7 +62,7 @@ if (!isset($_SESSION[$REX['INSTNAME']]['UID']) or $_SESSION[$REX['INSTNAME']]['U
 <script type="text/javascript" src="<?php
     echo min42::getCombinedJSMinFile("default.js", array(
         "/vendor/jquery-1.11.1.min.js",
-        "/vendor/picturefill.min.js",
+        "/vendor/jquery.form.js",
         "domscript.js"
     ));
 ?>"></script>
@@ -177,6 +177,12 @@ REX_ARTICLE[]
   unset($nav);
   echo $nav_footer;
 ?>
+
+
+
+
+
+
 <br/><br/>
 <a class="top" href="javascript:void(0);" >###nach oben###</a>
 
@@ -191,3 +197,4 @@ REX_ARTICLE[]
         </script -->
     </body>
 </html>
+
