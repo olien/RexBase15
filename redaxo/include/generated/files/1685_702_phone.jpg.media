@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['file_id'] = '63';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['filename'] = '1685_702_phone.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['originalname'] = '1685_702.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['filesize'] = '101940';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['width'] = '480';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['height'] = '246';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['title'] = 'Großes Bild';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['createdate'] = '1418040358';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['updatedate'] = '1418040358';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_phone.jpg']['med_copyright'] = '';
+?>

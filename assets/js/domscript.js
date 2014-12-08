@@ -1,6 +1,4 @@
 $( document ).ready(function() {
-
-
 // Externe Links in neuem Fenster öffnen
     $('a.extern').click(function(){
         window.open($(this).attr('href'));

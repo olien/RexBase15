@@ -1,0 +1,20 @@
+<?php
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['file_id'] = '61';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['re_file_id'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['category_id'] = '1';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['attributes'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['filetype'] = 'image/jpeg';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['filename'] = '1685_702_desktop.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['originalname'] = '1685_702.jpg';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['filesize'] = '537471';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['width'] = '1170';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['height'] = '600';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['title'] = 'Großes Bild';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['createdate'] = '1418040341';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['updatedate'] = '1418040341';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['createuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['updateuser'] = 'olien';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['revision'] = '0';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['med_description'] = '';
+$REX['MEDIA']['FILENAME']['1685_702_desktop.jpg']['med_copyright'] = '';
+?>

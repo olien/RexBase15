@@ -1,8 +1,8 @@
-?><?php if ($this->ctype == '1' || ($this->ctype == '-1')) { ?><?php
+<?php
 
-if ('1685_702.jpg') {
+if ('REX_MEDIA[1]') {
 
-$image = '1685_702.jpg';
+$image = 'REX_MEDIA[1]';
 
 if ($REX["MOBILE"]->isMobile() && ! $REX["MOBILE"]->isTablet()) {
     $suffix = '_phone';
@@ -33,4 +33,3 @@ if ($thumbnail instanceof OOMedia) {
 
 ?>
 
-<?php } ?>

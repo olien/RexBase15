@@ -1,15 +1,14 @@
+<?php
+/*
 $image_widths['header_xs'] = 480;
 $image_widths['header_sm'] = 768;
 $image_widths['header_md'] = 992;
-$image_widths['header_lg'] = 1200;
-
-<?php
+$image_widths['header_lg'] = 1100;
 
 $image = 'REX_MEDIA[1]';
 
   $imagetype    = 'headerimage_desktop';
-  $suffix       = '_header_md';
-
+  $suffix       = '';
 
 if ($REX["MOBILE"]->isTablet()) {
   $imagetype    = '_header_sm';
@@ -32,15 +31,15 @@ if ($thumbnail instanceof OOMedia) {
 
 echo '<img style width="100%" src="index.php?rex_img_type='.$imagetype.'&amp;rex_img_file='.$thumb.'" alt="" />';
 
-
+*/
 ?>
 
 <?php
-/*
-$image_widths['header_xs'] = 480;
-$image_widths['header_sm'] = 768;
-$image_widths['header_md'] = 992;
-$image_widths['header_lg'] = 1200;
+
+// $image_widths['xs'] = 768;
+$image_widths['sm'] = 768;
+$image_widths['md'] = 992;
+$image_widths['lg'] = 1200;
 
 $image = 'REX_MEDIA[1]';
 
@@ -62,16 +61,18 @@ if ($image != '') {
 
             $temp = OOMedia::getMediaByFilename($file);
             if ($temp instanceof OOMedia) {
-                $srcset[] = '/files/' . $file . ' ' . $width . 'w';
+                $srcset[] = '/files/' . $file . ' ' . $width . 'w'.PHP_EOL;
             } else {
-                $srcset[] = '/index.php?rex_img_type=' . $breakpoint . '&amp;rex_img_file=' . $image . ' ' . $width . 'w';
+                $srcset[] = '/index.php?rex_img_type=' . $breakpoint . '&amp;rex_img_file=' . $image . ' ' . $width . 'w'.PHP_EOL;
             }
         }
 
-          echo '<img  style="width:100%" src="/files/' . $image . '" srcset="' . implode(',', $srcset) . '" alt="' . htmlspecialchars( $o->getTitle() ) . '" />';
+          echo '<img  style="width:100%"
+                  src="/files/' . $image . '"
+                  srcset="' . implode(',', $srcset) . '" alt="' . htmlspecialchars( $o->getTitle() ) . '" />';
     }
 
 
 }
-*/
+
 ?>

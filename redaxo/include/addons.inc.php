@@ -60,6 +60,9 @@ $REX['ADDON']['status']['mform'] = '1';
 $REX['ADDON']['install']['phpmailer'] = '1';
 $REX['ADDON']['status']['phpmailer'] = '1';
 
+$REX['ADDON']['install']['responsiveimg'] = '0';
+$REX['ADDON']['status']['responsiveimg'] = '0';
+
 $REX['ADDON']['install']['rex_markitup'] = '1';
 $REX['ADDON']['status']['rex_markitup'] = '1';
 
